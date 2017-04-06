@@ -1,0 +1,3 @@
+target 'ServerLayer' do
+pod 'AFNetworking'
+end

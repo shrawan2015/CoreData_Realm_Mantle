@@ -1,0 +1,50 @@
+//
+//  DowloadService.swift
+//  ServerLayer
+//
+//  Created by ShrawanKumar Sharma on 06/04/17.
+//  Copyright © 2017 com.ServerLayer. All rights reserved.
+//
+
+import Foundation
+import SwiftyJSON
+
+class DowloadService: HTTPClient {
+    
+    override func executeRequest(_ requestModel: AnyObject?) {
+        requestURL = "https://api.themoviedb.org/3/movie/888?api_key=43dd8bb11c9abefef643794c5e0953d2"
+
+        executeNetworkCall(
+            { [unowned self] response in
+                self.onHTTPSuccess(response)
+            },
+            failure: {
+                self.onHTTPFailure()
+        } )
+    }
+    
+    func onHTTPSuccess(_ response: AnyObject) {
+        let res = JSON(response)
+        //networkTaskresponse = NetworkTaskResponses.success
+        onTaskSuccess(res)
+    }
+    
+    func onHTTPFailure() {
+        onTaskFailure()
+    }
+    
+    func onTaskSuccess(_ model: JSON) {
+        
+        if((delegate) != nil) {
+            delegate?.onTaskSuccess(model, networkTask: self)
+        }
+        
+    }
+    
+    func onTaskFailure() {
+        if((delegate) != nil) {
+            delegate?.onTaskFailure(self)
+        }
+    }
+    
+}
