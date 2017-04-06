@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-typealias DataConfigureBlocks = (Bool) -> Void
+typealias DataConfigureBlocks = (JSON) -> Void
 
 class DownLoadViewModel: NetworktaskDelegate {
     
@@ -29,7 +29,7 @@ class DownLoadViewModel: NetworktaskDelegate {
     
     func onTaskSuccess(_ response: JSON, networkTask: AnyObject) {
         DispatchQueue.main.async(execute: {
-            self.block(true)
+            self.block(response)
         })
     }
     

@@ -9,15 +9,12 @@
 import UIKit
 import SwiftyJSON
 
-typealias DataConfigureBlocks = (Bool) -> Void
 var downloadData = DownLoadViewModel()
 
 class ViewController: UIViewController {
 
-    func updateData(_ isSuccess: Bool) {
-        if(isSuccess == true) {
-            
-        }
+    func updateData(_ result: JSON) {
+        print(result)
     }
     
     override func viewDidLoad() {

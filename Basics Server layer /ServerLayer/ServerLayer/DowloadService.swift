@@ -12,7 +12,7 @@ import SwiftyJSON
 class DowloadService: HTTPClient {
     
     override func executeRequest(_ requestModel: AnyObject?) {
-        requestURL = "https://api.themoviedb.org/3/movie/888?api_key=43dd8bb11c9abefef643794c5e0953d2"
+        requestURL = "https://api.themoviedb.org/3/movie/top_rated?api_key=43dd8bb11c9abefef643794c5e0953d2"
 
         executeNetworkCall(
             { [unowned self] response in
