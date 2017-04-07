@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 import Alamofire
 import SwiftyJSON
-
+import  Mantle
 enum NetworkTaskResponses: Int {
     case success = 0
     case apiFailure
@@ -38,7 +38,7 @@ class HTTPClient:NSObject {
 
     override init() {
         baseURL = "https://google.com/"
-        requestURL = "https://api.themoviedb.org/3/movie/888?api_key=43dd8bb11c9abefef643794c5e0953d2"
+        requestURL = "https://api.themoviedb.org/3/movie/top_rated?api_key=43dd8bb11c9abefef643794c5e0953d2"
         errorMessage = ""
         networkTaskresponse = NetworkTaskResponse.success
     }
@@ -68,7 +68,16 @@ class HTTPClient:NSObject {
                 }
                
                 if let value = response.result.value {
+                    
+                    do {
+                        let user = try MTLJSONAdapter.model(of: MovieList.self as AnyClass, fromJSONDictionary: value as! [AnyHashable : Any]) as! MovieList
+                        print(user)
+                    }catch  {
+                        print("Invalid Selection.")
+                    }
                     success(value as AnyObject)
+
+
                 }
                 else {
                     failure()

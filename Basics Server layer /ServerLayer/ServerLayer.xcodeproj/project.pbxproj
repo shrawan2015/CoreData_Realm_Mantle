@@ -17,6 +17,7 @@
 		04DC226B1E9645FB00B161F9 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC226A1E9645FB00B161F9 /* NetworkLayer.swift */; };
 		04DC226D1E96519B00B161F9 /* DowloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC226C1E96519B00B161F9 /* DowloadService.swift */; };
 		04DC226F1E965AFD00B161F9 /* DownLoadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC226E1E965AFD00B161F9 /* DownLoadViewModel.swift */; };
+		04DC22751E97552A00B161F9 /* Mantle+RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC22741E97552A00B161F9 /* Mantle+RealmModel.swift */; };
 		6C4815BBFD61849297DC40D7 /* Pods_ServerLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CACA0775DE586B6ECF43B9 /* Pods_ServerLayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		04DC226A1E9645FB00B161F9 /* NetworkLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		04DC226C1E96519B00B161F9 /* DowloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DowloadService.swift; sourceTree = "<group>"; };
 		04DC226E1E965AFD00B161F9 /* DownLoadViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownLoadViewModel.swift; sourceTree = "<group>"; };
+		04DC22741E97552A00B161F9 /* Mantle+RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mantle+RealmModel.swift"; sourceTree = "<group>"; };
+		04DC22761E9755A200B161F9 /* Mantle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mantle-Bridging-Header.h"; sourceTree = "<group>"; };
 		0EECB780355D29820D5351F8 /* Pods-ServerLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServerLayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ServerLayer/Pods-ServerLayer.release.xcconfig"; sourceTree = "<group>"; };
 		28CACA0775DE586B6ECF43B9 /* Pods_ServerLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServerLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		696B7AC1A7E8F4F9388559A0 /* Pods-ServerLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServerLayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ServerLayer/Pods-ServerLayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				04DC22711E965E3400B161F9 /* DownloadService */,
 				04DC22701E965E2300B161F9 /* HTTPClient */,
 				04DC22511E96214E00B161F9 /* AppDelegate.swift */,
+				04DC22761E9755A200B161F9 /* Mantle-Bridging-Header.h */,
+				04DC22741E97552A00B161F9 /* Mantle+RealmModel.swift */,
 				04DC22531E96214F00B161F9 /* ViewController.swift */,
 				04DC22551E96214F00B161F9 /* Main.storyboard */,
 				04DC225B1E96215100B161F9 /* Assets.xcassets */,
@@ -242,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DC22751E97552A00B161F9 /* Mantle+RealmModel.swift in Sources */,
 				04DC22541E96214F00B161F9 /* ViewController.swift in Sources */,
 				04DC22521E96214E00B161F9 /* AppDelegate.swift in Sources */,
 				04DC226D1E96519B00B161F9 /* DowloadService.swift in Sources */,

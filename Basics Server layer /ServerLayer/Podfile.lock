@@ -15,18 +15,28 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Alamofire (4.4.0)
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
+  - Realm (2.5.1):
+    - Realm/Headers (= 2.5.1)
+  - Realm/Headers (2.5.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
+  - Mantle
+  - Realm
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  Realm: 32f86104d37c8521f864d4274050b38ba6190733
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2bf1ee2764a0738aa446889cc6a04cac622e7508
+PODFILE CHECKSUM: 4b2889e2ac75b9310912a0d03cb6053f4a4e51c4
 
 COCOAPODS: 1.2.0

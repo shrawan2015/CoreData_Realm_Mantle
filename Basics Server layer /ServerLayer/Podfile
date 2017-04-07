@@ -5,5 +5,8 @@ target 'ServerLayer' do
 pod "AFNetworking"
 pod "Alamofire" 
 pod "SwiftyJSON"
+pod "Mantle"
+pod "Realm"
+
 end
 
