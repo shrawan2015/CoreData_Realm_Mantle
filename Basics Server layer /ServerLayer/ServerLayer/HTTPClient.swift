@@ -69,13 +69,14 @@ class HTTPClient:NSObject {
                
                 if let value = response.result.value {
                     
+                    success(value as AnyObject)
+
                     do {
                         let user = try MTLJSONAdapter.model(of: MovieList.self as AnyClass, fromJSONDictionary: value as! [AnyHashable : Any]) as! MovieList
                         print(user)
                     }catch  {
                         print("Invalid Selection.")
                     }
-                    success(value as AnyObject)
 
 
                 }

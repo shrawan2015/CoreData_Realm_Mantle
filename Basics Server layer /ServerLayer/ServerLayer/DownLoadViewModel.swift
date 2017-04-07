@@ -30,6 +30,7 @@ class DownLoadViewModel: NetworktaskDelegate {
     func onTaskSuccess(_ response: JSON, networkTask: AnyObject) {
         DispatchQueue.main.async(execute: {
             self.block(response)
+            
         })
     }
     
