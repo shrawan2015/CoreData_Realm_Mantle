@@ -39,9 +39,14 @@ class ViewController: UIViewController {
         do {
             let realm = try Realm()
             try realm.write {
+                
+                
                 let movieRealm = MovieRealm()
                 movieRealm.page = moviList.page as! Double
                 movieRealm.total_pages = moviList.total_pages as! Double
+                
+                let movieListRelmData = movieRealm
+              //  movieRealm.moviedisplay = moviList.movieList
                 realm.add(movieRealm)
             
             }
