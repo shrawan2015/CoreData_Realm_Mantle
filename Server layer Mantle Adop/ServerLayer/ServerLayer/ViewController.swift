@@ -23,10 +23,7 @@ class ViewController: UIViewController {
             let obj = movies.movieList?[0]
             let gener_id = obj?.genre_ids
             print(gener_id ?? "error" )
-            
-            
             self.saveOfflineMovielist(moviList: movies)
-            
         }catch  {
             print("Invalid Selection.")
         }
@@ -39,15 +36,10 @@ class ViewController: UIViewController {
         do {
             let realm = try Realm()
             try realm.write {
-                
-                
-                let movieRealm = MovieRealm()
-                movieRealm.page = moviList.page as! Double
-                movieRealm.total_pages = moviList.total_pages as! Double
-                
-                let movieListRelmData = movieRealm
-              //  movieRealm.moviedisplay = moviList.movieList
+
+                let movieRealm = MovieRealm(moviList: moviList)
                 realm.add(movieRealm)
+
             
             }
         } catch {

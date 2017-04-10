@@ -15,18 +15,25 @@ class MovieRealm:Object{
     dynamic var total_pages: Double = 0.0
     dynamic var total_results: Double = 0.0
     dynamic var page: Double = 0.0
-    //var moviedisplay = List<MovieListRealm>()
+    var moviedisplay = List<MovieListRealm>()
 
     
     
-    override public static func primaryKey() -> String? {
-        return "total_pages"
-    }
+//    override public static func primaryKey() -> String? {
+//        return "total_pages"
+//    }
     
     convenience init(moviList:MovieList) {
         self.init()
         page = moviList.page as! Double
         total_pages = moviList.total_pages as! Double
+        
+        for  movieMantleRealmModel  in moviList.movieList! {
+            print(" realm object %@ \n ", movieMantleRealmModel)
+            let movieListRealm = MovieListRealm(moviList: movieMantleRealmModel)
+            moviedisplay.append(movieListRealm)
+        }
+        
     }
     
 }
@@ -39,6 +46,14 @@ class MovieListRealm:Object {
     dynamic var movieId: Double = 0.0
     dynamic var original_title: String = ""
     dynamic var overView: String = ""
+    
+    
+    convenience init(moviList:MovieMantleRealmModel) {
+        self.init()
+        movieId = moviList.movieId as! Double
+        original_title = moviList.original_title!
+        overView = moviList.overView!
+    }
 
 }
 
