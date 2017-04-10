@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 import  Mantle
-import  Realm
+import  RealmSwift
 
 var downloadData = DownLoadViewModel()
 
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             let movies = try MTLJSONAdapter.model(of: MovieList.self as AnyClass, fromJSONDictionary: result as! [AnyHashable : Any]) as! MovieList
             let obj = movies.movieList?[0]
             let gener_id = obj?.genre_ids
-            print(gener_id )
+            print(gener_id ?? "error" )
             
             
             self.saveOfflineMovielist(moviList: movies)
@@ -36,25 +36,27 @@ class ViewController: UIViewController {
     
     func saveOfflineMovielist(moviList :MovieList) {
 
-        let realm:RLMRealm = RLMRealm.default()
-        let movieRealm = MovieRealm()
-        movieRealm.page = moviList.page as Int?
-        
-        //movieRealm.movieList = moviList.movieList
-        realm.beginWriteTransaction()
-        realm.add(movieRealm)
-        
         do {
-            try  realm.commitWriteTransaction()
-
-        }catch  {
-            print("Invalid Selection.")
+            let realm = try Realm()
+            try realm.write {
+                let movieRealm = MovieRealm()
+                movieRealm.page = moviList.page as! Double
+                movieRealm.total_pages = moviList.total_pages as! Double
+                realm.add(movieRealm)
+            
+            }
+        } catch {
+            print("Error!")
         }
         
-        //Load Back the data from realm
-        let realmData = RLMRealm.default()
-        let dataMovie:RLMResults = MovieRealm.allObjects(in: realmData)
-        print(dataMovie)
+        
+        do {
+            let realm = try Realm()
+            let movieList = realm.objects(MovieRealm.self)
+            print(movieList)
+        } catch {
+            print("Error!")
+        }
 
     }
         

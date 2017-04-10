@@ -1,3 +1,7 @@
 target 'ServerLayer' do
 pod 'AFNetworking'
+pod "Mantle"
+pod "SwiftyRealm"
+
+
 end

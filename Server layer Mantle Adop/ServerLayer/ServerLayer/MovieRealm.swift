@@ -7,27 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-import Realm
+class MovieRealm:Object{
 
-class MovieRealm:RLMObject{
-    
-   // var  movieList: [RLMArray<RLMObject>]?
-      var  total_pages  : Int? = nil
-     var  page : Int? = nil
-     var  total_results:Int? = nil
-    
-    override init() {
-        super.init()
-    }
-
-    convenience init(movieList: MovieList) {
-        self.init()
-
-       // self.movieList = movieList.movieList as! [RLMArray<RLMObject>]?
-        self.total_pages = movieList.total_pages as Int?
-        self.page = movieList.page as Int?
-        self.total_results =  movieList.total_results as Int?
-    }
-    
+    //var  movieList: [RLMArray<RLMObject>]?
+    dynamic var total_pages: Double = 0.0
+    dynamic var total_results: Double = 0.0
+    dynamic var page: Double = 0.0
 }
